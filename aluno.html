@@ -1,0 +1,255 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+
+		<title>Calculadora</title>
+
+		<!-- bootstrap - link cdn -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<script type="text/javascript">
+
+
+/*
+<div class="form-group"> 
+
+
+<label for="nota_final"> Faltas </label>
+
+<input id="faltas" type="text" class="form-control" id="nota_final"> 
+
+</div>
+
+</input> */
+
+function calculo(){
+
+var nome = document.getElementById('nome').value;
+
+var materia = document.getElementById('materia').value;
+
+var nota1 = parseFloat(document.getElementById('nota1').value);
+
+var nota2 = parseFloat(document.getElementById('nota2').value);
+
+var nota3 = parseFloat(document.getElementById('nota3').value);
+
+var nota4 = parseFloat(document.getElementById('nota4').value);
+
+
+
+var resultado = parseFloat((nota1 + nota2 + nota3 + nota4) / 4);
+ 
+if(nome == "" || nome == null){
+alert('Preencha o campo Nome');
+return false;
+
+}
+
+if(materia == "" || materia == null){
+alert('Preencha o campo Materia');
+return false;
+
+}
+
+if(nota1 >= 11){
+alert('A nota do 1º Semestre deve estar e 0 e 10');
+return false;
+
+}
+
+if(nota2 >= 11){
+alert('A nota do 2º Semestre deve estar e 0 e 10');
+return false;
+
+}
+
+
+if(nota3 >= 11){
+alert('A nota do 3º Semestre deve estar e 0 e 10');
+return false;
+
+}
+
+if(nota4 >= 11){
+alert('A nota do 4º Semestre deve estar e 0 e 10');
+return false;
+
+}
+
+
+if(resultado < 7){
+document.getElementById("txtSituação").setAttribute("value","Reprovado");
+
+
+}
+
+
+else{
+
+document.getElementById('txtSituação').setAttribute("value","Aprovado");
+return true;
+
+
+
+}
+
+
+document.getElementById("txtResultado").setAttribute("value", resultado);
+
+}
+
+
+
+
+
+</script>
+
+	</head>
+
+
+<body>
+
+
+<div class="container">
+	
+<div class="jumbotron" style="background: #263465;">
+	
+<h1> <font color="white"> Media <font color="orange"> & </font> Aluno </font> </h1>
+
+
+                            </div>	
+
+
+
+       <div class="row"> 
+
+       <div class="col-md-6" border:solid 1px red; >
+
+        
+        <form class="form-group">
+
+         <label for="nomefo"> Nome <font color="red"> * </font> </label>
+              
+         <input id="nome" type="text" class="form-control" id="nomefo">
+
+                                                        </form>
+
+
+        <form class="form-group">
+
+       <label for="materiafo"> Materia <font color="red"> * </font> </label>
+              
+       <input id="materia" type="text" class="form-control" id="materiafo">
+             
+                                                          </form>
+
+
+       <form class="form-group">
+
+       <label> Nota 1º Semestre <font color="red"> * </font> </label>
+              
+       <input id="nota1" type="text" class="form-control">
+             
+                                                          </form>
+
+
+
+        <form class="form-group">
+
+       <label> Nota 2º Semestre <font color="red"> * </font>  </label>
+              
+       <input id="nota2" type="text" class="form-control">
+             
+                                                          </form>   
+
+
+       <form class="form-group">
+
+       <label> Nota 3º Semestre <font color="red"> * </font>   </label>
+              
+       <input id="nota3" type="text" class="form-control">
+             
+                                                          </form>    
+
+
+         <form class="form-group">
+
+       <label> Nota 4º Semestre  <font color="red"> * </font>  </label>
+              
+       <input id="nota4" type="text" class="form-control">
+             
+                                                          </form>                                                 
+
+
+       
+
+   <button type="button" class="btn btn-success" onclick="javascript:calculo()"> 
+
+
+   <span class="glyphicon glyphicon-ok" ></span>
+
+	Calcular 
+
+
+
+                                                                  </button>
+
+
+<button type="button" class="btn btn-danger" style="margin-left: 10px"> 
+
+ <span class="glyphicon glyphicon-remove"></span>
+
+Cancelar 
+
+
+                                                                   </button>
+
+
+<hr />
+
+                                                                                                                                                             
+                                                                                               </div>
+
+
+
+ <div class="col-md-6"> 
+
+
+                       <div class="well" class="form-group" style="margin-top: 20px;"> 
+
+
+                                               <label for="nota_final"> Media	</label>
+
+                 <input id="txtResultado" type="text" class="form-control" id="nota_final"> 
+        
+
+
+
+
+           <br>
+                                                                                        
+
+                   <div  class="form-group"> 
+
+
+                                               <label for="nota_final"> Situação	</label>
+
+                 <input id="txtSituação" type="text" class="form-control" id="nota_final"> 
+        </div>
+
+          
+                                                                                                 </div>
+
+                                                                                                 <hr />
+
+                                                                                                  </div>
+
+
+	
+		
+
+ 
+	</body>
+</html>
